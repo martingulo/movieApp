@@ -23,7 +23,7 @@ function App() {
       return 0;
     };
 
-    const URL = "http://www.omdbapi.com";
+    const URL = "https://www.omdbapi.com";
     const Apikey = import.meta.env.VITE_MOVIE_API_KEY;
   
     setLoading(true);
