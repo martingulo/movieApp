@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Image from '../src/assets/movie.jpg'
+import Panda from './assets/panda.png'
 import Movie from './components/Movie';
 import axios from 'axios';
 
@@ -15,14 +15,13 @@ function App() {
   const handleSearch = (title) =>{
     if(title.trim() == ""){
       setInputError("Invalid input!");
+      setMovies([]);
 
       setTimeout(() =>{
         setInputError("");
       }, 3000);
       return 0;
     };
-
-  
 
     const URL = "http://www.omdbapi.com";
     const Apikey = "65f8e5a4";
@@ -81,12 +80,15 @@ function App() {
                 className=' py-4 px-4 bg-black shadow-2xl w-[100%]  rounded-3xl outline-0'
                 placeholder='Search any movie' 
                 id="" />
-                <h3 onClick={searchBtn} className=' absolute right-3 pl-4 bg-black cursor-pointer hover:text-amber-100'>Search</h3>
+                <h3 onClick={searchBtn} 
+                  className=' absolute right-3 pl-4 bg-black cursor-pointer hover:text-amber-100'>
+                    Search
+                </h3>
             </div>
         </div>
 
 
-        <div className="list flex flex-wrap justify-center gap-4 m-2 mt-10  ">
+        <div className="list flex flex-wrap justify-center gap-4 m-2 mt-10 pb-30 pt-40  ">
 
           {
             movies?.length > 0 
@@ -99,6 +101,12 @@ function App() {
               <div className='m-auto w-[80%] md:w-[50%] text-center bg-black rounded-2xl p-3'>No movies found</div>
             )
           }
+        </div>
+
+
+        <div className="footer flex justify-center align-middle items-center fixed bottom-0 w-full text-center py-4 bg-black">
+          &copy; {new Date().getFullYear()} MovieWorld. All rights reserved. 
+          <img className=' size-10' src={Panda} alt="" />
         </div>
     </div>
   )
