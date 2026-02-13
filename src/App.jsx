@@ -24,7 +24,8 @@ function App() {
     };
 
     const URL = "http://www.omdbapi.com";
-    const Apikey = import.meta.process.env.VITE_MOVIE_API_KEY;
+    const Apikey = import.meta.env.VITE_MOVIE_API_KEY;
+    // const Apikey = "65f8e5a4";
   
     setLoading(true);
     axios.get(`${URL}?apikey=${Apikey}&s=${title}`)
@@ -57,7 +58,7 @@ function App() {
   if(loading){
     return <div className=' w-full gap-9  flex-col flex items-center text-3xl justify-center align-middle h-screen'>
       <div className="  w-[150px] h-[150px]  rounded-full animate-spin  border-t-2"> </div>
-      <p>loading</p>
+      <p>loading...</p>
     </div>
   }
 
@@ -98,13 +99,13 @@ function App() {
               ))
             )
             : (
-              <div className='m-auto w-[80%] md:w-[50%] text-center bg-black rounded-2xl p-3'>No movies found</div>
+              <div className='m-auto  md:mt-9 w-[80%] md:w-[50%] text-center bg-black rounded-2xl p-3'>No movies found</div>
             )
           }
         </div>
 
 
-        <div className="footer flex justify-center align-middle items-center fixed bottom-0 w-full text-center py-4 bg-black">
+        <div className="footer flex justify-center align-middle items-center fixed bottom-0 w-full text-center text-[14px] md:text-[14px] py-4 md:py-2 bg-black">
           &copy; {new Date().getFullYear()} MovieWorld. All rights reserved. 
           <img className=' size-10' src={Panda} alt="" />
         </div>
