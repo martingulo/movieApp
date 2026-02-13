@@ -104,7 +104,7 @@ function App() {
         </div>
 
 
-        <div className="footer flex justify-center align-middle items-center fixed bottom-0 w-full text-center text-[14px] md:text-[14px] py-4 md:py-2 bg-black">
+        <div className="footer flex justify-center align-middle items-center fixed bottom-0 w-full text-center text-[14px] md:text-[14px] py-2 md:py-2 bg-black">
           &copy; {new Date().getFullYear()} MovieWorld. All rights reserved. 
           <img className=' size-10' src={Panda} alt="" />
         </div>
