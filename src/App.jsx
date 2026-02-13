@@ -25,7 +25,6 @@ function App() {
 
     const URL = "http://www.omdbapi.com";
     const Apikey = import.meta.env.VITE_MOVIE_API_KEY;
-    // const Apikey = "65f8e5a4";
   
     setLoading(true);
     axios.get(`${URL}?apikey=${Apikey}&s=${title}`)
